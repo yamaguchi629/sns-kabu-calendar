@@ -26,11 +26,26 @@
   .today { border: 2px solid #1976d2; }
   .summary { max-width: 700px; margin: 10px auto; padding: 12px; background: white; border-radius: 8px; display: flex; gap: 20px; justify-content: center; font-size: 13px; flex-wrap: wrap; }
   .summary span { font-weight: bold; }
+  .grand-total { max-width: 700px; margin: 0 auto 30px; padding: 16px; background: #263238; border-radius: 10px; }
+  .grand-total-title { text-align: center; color: #fff; font-size: 16px; font-weight: bold; margin-bottom: 10px; }
+  .grand-total .summary { background: transparent; margin: 0; }
+  .grand-total .summary span { color: #eee; }
 </style>
 </head>
 <body>
 <h1>📈 収支カレンダー｜株自動売買ツール実録</h1>
 <p class="note">※税引き前参考値　括弧内は税引き後概算（×0.797）</p>
+
+<div class="grand-total">
+  <div class="grand-total-title">📊 全合計（6月〜7月）</div>
+  <div class="summary">
+    <span style="color:#81c784">✅ 勝ち日：12日</span>
+    <span style="color:#e57373">❌ 負け日：11日</span>
+    <span style="color:#bbb">➖ 取引なし：7日</span>
+    <span>税引前合計：<span style="color:#e57373">-6,788円</span></span>
+    <span>税引後概算：<span style="color:#e57373">-6,788円</span></span>
+  </div>
+</div>
 
 <div class="month-container">
   <div class="month-title">2026年 6月</div>

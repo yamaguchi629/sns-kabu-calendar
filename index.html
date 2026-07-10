@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>収支カレンダー</title>
+<style>
+  body { font-family: 'Meiryo', sans-serif; background: #f5f5f5; padding: 20px; }
+  h1 { text-align: center; color: #333; font-size: 20px; }
+  .note { text-align: center; color: #888; font-size: 11px; margin-bottom: 20px; }
+  .month-container { margin-bottom: 40px; }
+  .month-title { font-size: 18px; font-weight: bold; color: #444; margin-bottom: 10px; text-align: center; }
+  .calendar { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; max-width: 700px; margin: 0 auto; }
+  .day-header { text-align: center; font-size: 12px; font-weight: bold; padding: 6px; color: #666; }
+  .day-header.sun { color: #e53935; }
+  .day-header.sat { color: #1e88e5; }
+  .day { border-radius: 8px; padding: 6px 4px; text-align: center; min-height: 70px; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+  .day .date { font-size: 13px; font-weight: bold; margin-bottom: 3px; }
+  .day .pnl { font-size: 11px; font-weight: bold; }
+  .day .pnl-after { font-size: 9px; opacity: 0.75; margin-top: 2px; }
+  .empty { background: transparent; }
+  .no-trade { background: #e0e0e0; color: #999; }
+  .profit { background: #c8e6c9; color: #2e7d32; }
+  .loss { background: #ffcdd2; color: #c62828; }
+  .zero { background: #fff9c4; color: #f57f17; }
+  .today { border: 2px solid #1976d2; }
+  .summary { max-width: 700px; margin: 10px auto; padding: 12px; background: white; border-radius: 8px; display: flex; gap: 20px; justify-content: center; font-size: 13px; flex-wrap: wrap; }
+  .summary span { font-weight: bold; }
+</style>
+</head>
+<body>
+<h1>📈 収支カレンダー｜株自動売買ツール実録</h1>
+<p class="note">※税引き前参考値　括弧内は税引き後概算（×0.797）</p>
+
+<div class="month-container">
+  <div class="month-title">2026年 6月</div>
+  <div class="calendar">
+    <div class="day-header sun">日</div>
+    <div class="day-header">月</div>
+    <div class="day-header">火</div>
+    <div class="day-header">水</div>
+    <div class="day-header">木</div>
+    <div class="day-header">金</div>
+    <div class="day-header sat">土</div>
+
+    <div class="day empty"></div>
+    <div class="day profit"><div class="date">1</div><div class="pnl">+790</div><div class="pnl-after">(+629)</div></div>
+    <div class="day profit"><div class="date">2</div><div class="pnl">+11,562</div><div class="pnl-after">(+9,215)</div></div>
+    <div class="day profit"><div class="date">3</div><div class="pnl">+18,834</div><div class="pnl-after">(+15,010)</div></div>
+    <div class="day profit"><div class="date">4</div><div class="pnl">+1,396</div><div class="pnl-after">(+1,112)</div></div>
+    <div class="day profit"><div class="date">5</div><div class="pnl">+456</div><div class="pnl-after">(+363)</div></div>
+    <div class="day no-trade"><div class="date">6</div></div>
+
+    <div class="day no-trade"><div class="date">7</div></div>
+    <div class="day zero"><div class="date">8</div><div class="pnl">0件</div></div>
+    <div class="day loss"><div class="date">9</div><div class="pnl">-2,370</div><div class="pnl-after">(-2,370)</div></div>
+    <div class="day profit"><div class="date">10</div><div class="pnl">+1,434</div><div class="pnl-after">(+1,143)</div></div>
+    <div class="day profit"><div class="date">11</div><div class="pnl">+1,640</div><div class="pnl-after">(+1,307)</div></div>
+    <div class="day loss"><div class="date">12</div><div class="pnl">-8,874</div><div class="pnl-after">(-8,874)</div></div>
+    <div class="day no-trade"><div class="date">13</div></div>
+
+    <div class="day no-trade"><div class="date">14</div></div>
+    <div class="day zero"><div class="date">15</div><div class="pnl">0件</div></div>
+    <div class="day loss"><div class="date">16</div><div class="pnl">-6,992</div><div class="pnl-after">(-6,992)</div></div>
+    <div class="day profit"><div class="date">17</div><div class="pnl">+4,392</div><div class="pnl-after">(+3,500)</div></div>
+    <div class="day loss"><div class="date">18</div><div class="pnl">-14,724</div><div class="pnl-after">(-14,724)</div></div>
+    <div class="day profit"><div class="date">19</div><div class="pnl">+7,082</div><div class="pnl-after">(+5,644)</div></div>
+    <div class="day no-trade"><div class="date">20</div></div>
+
+    <div class="day no-trade"><div class="date">21</div></div>
+    <div class="day loss"><div class="date">22</div><div class="pnl">-2,856</div><div class="pnl-after">(-2,856)</div></div>
+    <div class="day loss"><div class="date">23</div><div class="pnl">-9,664</div><div class="pnl-after">(-9,664)</div></div>
+    <div class="day zero"><div class="date">24</div><div class="pnl">0件</div></div>
+    <div class="day zero"><div class="date">25</div><div class="pnl">0件</div></div>
+    <div class="day profit"><div class="date">26</div><div class="pnl">+9,558</div><div class="pnl-after">(+7,618)</div></div>
+    <div class="day no-trade"><div class="date">27</div></div>
+
+    <div class="day no-trade"><div class="date">28</div></div>
+    <div class="day loss"><div class="date">29</div><div class="pnl">-5,422</div><div class="pnl-after">(-5,422)</div></div>
+    <div class="day loss"><div class="date">30</div><div class="pnl">-2,188</div><div class="pnl-after">(-2,188)</div></div>
+    <div class="day empty"></div>
+    <div class="day empty"></div>
+    <div class="day empty"></div>
+    <div class="day empty"></div>
+  </div>
+  <div class="summary">
+    <span style="color:#2e7d32">✅ 勝ち日：10日</span>
+    <span style="color:#c62828">❌ 負け日：8日</span>
+    <span style="color:#333">税引前合計：<span style="color:#2e7d32">+4,054円</span></span>
+    <span style="color:#555">税引後概算：<span style="color:#2e7d32">+3,231円</span></span>
+  </div>
+</div>
+
+<div class="month-container">
+  <div class="month-title">2026年 7月</div>
+  <div class="calendar">
+    <div class="day-header sun">日</div>
+    <div class="day-header">月</div>
+    <div class="day-header">火</div>
+    <div class="day-header">水</div>
+    <div class="day-header">木</div>
+    <div class="day-header">金</div>
+    <div class="day-header sat">土</div>
+
+    <div class="day empty"></div>
+    <div class="day empty"></div>
+    <div class="day empty"></div>
+    <div class="day loss"><div class="date">1</div><div class="pnl">-13,116</div><div class="pnl-after">(-13,116)</div></div>
+    <div class="day zero"><div class="date">2</div><div class="pnl">0件</div></div>
+    <div class="day loss"><div class="date">3</div><div class="pnl">-2,152</div><div class="pnl-after">(-2,152)</div></div>
+    <div class="day no-trade"><div class="date">4</div></div>
+    <div class="day no-trade"><div class="date">5</div></div>
+    <div class="day zero"><div class="date">6</div><div class="pnl">0件</div></div>
+    <div class="day loss"><div class="date">7</div><div class="pnl">-11,378</div><div class="pnl-after">(-11,378)</div></div>
+    <div class="day zero"><div class="date">8</div><div class="pnl">0件</div></div>
+    <div class="day profit"><div class="date">9</div><div class="pnl">+9,524</div><div class="pnl-after">(+7,591)</div></div>
+    <div class="day profit today"><div class="date">10</div><div class="pnl">+6,280</div><div class="pnl-after">(+5,005)</div></div>
+    <div class="day no-trade"><div class="date">11</div></div>
+    <div class="day no-trade"><div class="date">12</div></div>
+  </div>
+  <div class="summary">
+    <span style="color:#2e7d32">✅ 勝ち日：2日</span>
+    <span style="color:#c62828">❌ 負け日：3日</span>
+    <span style="color:#999">➖ 取引なし：3日</span>
+    <span style="color:#333">税引前合計：<span style="color:#c62828">-10,842円</span></span>
+    <span style="color:#555">税引後概算：<span style="color:#c62828">-10,842円</span></span>
+  </div>
+</div>
+
+<p style="text-align:center;color:#999;font-size:11px;">🟩 プラス　🟥 マイナス　⬜ 取引なし・祝日　🟨 データなし</p>
+</body>
+</html>
